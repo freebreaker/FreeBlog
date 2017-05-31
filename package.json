@@ -1,11 +1,10 @@
 {
   "name": "freeblog",
   "version": "1.0.0",
-  "description": "",
+  "description": "a free blog",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-     "start": "cross-env NODE_ENV=production pm2 start index.js --node-args='--harmony' --name 'freeblog'"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "freeblog"
