@@ -1,0 +1,64 @@
+  <script type="text/javascript">
+    // 点击按钮弹出下拉框
+    $('.ui.dropdown').dropdown();
+    // 鼠标悬浮在头像上，弹出气泡提示框
+    $('.post-content .avatar').popup({
+      inline: true,
+      position: 'bottom right',
+      lastResort: 'bottom right',
+    });
+
+    $('.nav-setting .icon.bars').click(function(){
+      console.log(555)
+      $('.ui.labeled.icon.sidebar')
+        .sidebar('toggle')
+    ;
+  });
+
+  // 侧边栏弹出设置
+
+    var $navSetting=$('.nav-setting'),
+        icon=$('.open')
+
+    icon.click(function(){
+      // icon.css('right','-160px')
+      if($navSetting.offset().left==0){
+
+        startmove(-150,-10);
+        icon.text('Open');
+        
+
+      }else{
+        startmove(0,10)
+        icon.text('Close');
+      }
+    });
+
+    var timer=null;
+
+    function startmove(target,speed){
+      clearInterval(timer);
+      timer=setInterval(function(){
+        if($navSetting.offset().left==target){
+          clearInterval(timer)
+        }else{
+          $navSetting.css('left',$navSetting.offset().left+speed+'px')
+        }
+      },18)
+    }
+
+
+
+
+
+    // 点击postcontent的标题，显示全文
+
+    // $('.ui.segment h3 a').click(function(e){
+    //   e.preventDefault()
+
+    //   $('.ui.segment pre').css('height','600')
+    // })
+
+  </script>
+  </body>
+</html>
